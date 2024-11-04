@@ -3,9 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <title>Coopérative MBOA - Élevage d'animaux</title>
+    <style>
+        /* Styles précédents */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #2c5f2d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Styles du diaporama */
+        .slideshow-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        /* Autres styles précédents */
+        nav {
+            background-color: #97bc62;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            margin-bottom: 60px;
+        }
+        
+        /* Reste des styles... */
+        .animal-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: #f5f5f5;
+        }
+        
+        .animal-section h2 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+        }
+        
+        .animal-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .inscription-section {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+        }
+
+        .inscription-section h2 {
+            color: #2c5f2d;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="file"] {
+            padding: 0.5rem 0;
+        }
+
+        .form-group .hint {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        button[type="submit"] {
+            background-color: #2c5f2d;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1e4121;
+        }
+        
+        footer {
+            background-color: #2c5f2d;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2c5f2d;
+            margin: 2rem 0;
+            font-size: 2rem;
+        }
+    </style>
 </head>
-    <body>
-      <p>My First </p>
-    </body>
-</html>
-   
+<body>
+    <header>
+        <h1>Coopérative MBOA</h1>
+        <p>Votre partenaire en élevage de qualité</p>
+    </header>
+
+    <!-- Nouveau diaporama -->
+    <div class="slideshow-container">
+        <div class="slide active">
+            <img src="/api/placeholder/1200/400" alt="Poules">
+            <div class="slide-caption">Élevage de Poules</div>
+        </div>
+        <div class="slide">
+            <img src="/api/placeholder/1200/400" alt="Porcs">
+            <div class="slide-caption">Élevage de Porcs</div>
+        </div>
+        <div class="slide">
+            <img src="/api/placeholder/1200/400" alt="Moutons">
+            <div class="slide-caption">Élevage de Moutons</div>
+        </div>
+        <div class="slide">
+            <img src="/api/placeholder/1200/400" alt="Canards">
+            <div class="slide-caption">Élevage de Canards</div>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#poules">Poules</a></li>
+            <li><a href="#porcs">Porcs</a></li>
+            <li><a href="#moutons">Moutons</a></li>
+            <li><a href="#canards">Canards</a></li>
+            <li><a href="#inscription">Inscription</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h2 class="section-title">Nos Élevages</h2>
+        
+        <!-- Reste du contenu... -->
+        <section id="poules" class="animal-section">
+            <h2>Élevage de Poules</h2>
+            <img src="/api/placeholder/800/400" alt="Élevage de poules">
+            <p>Notre élevage de poules est géré selon les meilleures pratiques d'élevage en plein air. Nos poules sont nourries avec des aliments de qualité pour assurer une production optimale d'œufs et une viande savoureuse.</p>
+        </section>
+
+        <section id="porcs" class="animal-section">
+            <h2>Élevage de Porcs</h2>
+            <img src="/api/placeholder/800/400" alt="Élevage de porcs">
+            <p>Nos porcs sont élevés dans des conditions optimales avec un suivi vétérinaire régulier. Nous privilégions une alimentation équilibrée pour garantir une viande de première qualité.</p>
+        </section>
+
+        <section id="moutons" class="animal-section">
+            <h2>Élevage de Moutons</h2>
+            <img src="/api/placeholder/800/400" alt="Élevage de moutons">
+            <p>Notre troupeau de moutons bénéficie de vastes pâturages pour un élevage naturel. Nous produisons aussi bien de la viande de qualité que de la laine.</p>
+        </section>
+
+        <section id="canards" class="animal-section">
+            <h2>Élevage de Canards</h2>
+            <img src="/api/placeholder/800/400" alt="Élevage de canards">
+            <p>Nos canards sont élevés dans le respect du bien-être animal, avec accès à des plans d'eau naturels. Notre production comprend des canards de chair et des œufs de canard.</p>
+        </section>
+
+        <h2 class="section-title">Rejoignez Notre Coopérative</h2>
+        
+        <section id="inscription" class="inscription-section">
+            <h2>Formulaire d'Inscription</h2>
+            <form action="/submit" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_naissance">Date de naissance *</label>
+                    <input type="date" id="date_naissance" name="date_naissance" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lieu_naissance">Lieu de naissance *</label>
+                    <input type="text" id="lieu_naissance" name="lieu_naissance" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="piece_identite">Type de pièce d'identité *</label>
+                    <select id="piece_identite" name="piece_identite" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="cni">Carte Nationale d'Identité</option>
+                        <option value="recepisse">Récépissé</option>
+                        <option value="passeport">Passeport</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo_piece">Photocopie certifiée de la pièce d'identité *</label>
+                    <input type="file" id="photo_piece" name="photo_piece" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <p class="hint">Format accepté : PDF, JPG, PNG (Max 5MB)</p>
+                </div>
+
+                <button type="submit">Soumettre ma candidature</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Coopérative MBOA - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Script pour le diaporama automatique
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Changer de slide toutes les 3 secondes
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+    </html>
